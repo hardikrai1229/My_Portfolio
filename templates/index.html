@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Portfolio</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-outline-light ms-2" id="theme-toggle">
+                <i class="fas fa-moon"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="row align-items-center min-vh-100">
+          <div class="col-lg-6">
+            <h1 class="display-1 fw-bold reveal-text">
+              Hello, I'm <span class="text-primary">Hardik Rai</span>
+            </h1>
+            <p class="lead mb-4 reveal-text">
+              Aspiring Software Engineer | Cloud Enthusiast
+            </p>
+            <div class="social-links reveal-text">
+              <a href="https://github.com/hardikrai1229" class="me-3"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/hardik-rai-283944259/"
+                class="me-3"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5 section-title">About Me</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4">
+            <p class="lead">
+              I am a software developer with expertise in MERN stack, AWS cloud,
+              and real-time systems.I specialize in cloud computing
+              architectures, AWS deployments, and scalable backend solutions.
+              Passionate about building efficient, secure, and high-performance
+              systems.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <div class="decorative-image">
+              <img
+                src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1955&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Decorative"
+                class="img-fluid rounded"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5 section-title">Skills</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="skill-card">
+              <i class="fas fa-code"></i>
+              <h3>Languages</h3>
+              <p>C, Java, HTML, CSS, JavaScript</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="skill-card">
+              <i class="fas fa-server"></i>
+              <h3>Framework/Library</h3>
+              <p>MongoDB, Express.js, Node.js, Socket.io, React JS</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="skill-card">
+              <i class="fas fa-paint-brush"></i>
+              <h3>Technologies</h3>
+              <p>
+                Git, GitHub, Azure, AWS(5+ services - EC2, VPC, IAM, DynamoDB,
+                EBS etc )
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5 section-title">Projects</h2>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="project-card">
+              <img
+                src="https://media.istockphoto.com/id/1217093906/photo/womens-hand-typing-on-mobile-smartphone-live-chat-chatting-on-application-communication.jpg?s=1024x1024&w=is&k=20&c=tRqp6xCyOiHTAV96BslnXmi5fpq5IfHG-03ItDmn5fw="
+                alt="Project 1"
+                class="img-fluid"
+              />
+              <div class="project-info">
+                <h3>Real-time Chat Application</h3>
+                <p>MongoDB + Express.js + React.js + Node.js</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="project-card">
+              <img
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40"
+                alt="Project 2"
+                class="img-fluid"
+              />
+              <div class="project-info">
+                <h3>Portfolio Website</h3>
+                <p>HTML, CSS, JavaScript</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="project-card">
+              <img
+                src="https://images.unsplash.com/photo-1739514984003-330f7c1d2007"
+                alt="Project 3"
+                class="img-fluid"
+              />
+              <div class="project-info">
+                <h3>Resource Scaling using Monte Carlo Algorithm</h3>
+                <p>Java programming + Cloud Computing</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="project-card">
+              <img
+                src="https://images.unsplash.com/photo-1585057638670-98226d968ee5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGdlcm18ZW58MHx8MHx8fDA%3D"
+                alt="Project 4"
+                class="img-fluid"
+              />
+              <div class="project-info">
+                <h3>
+                  Lack of Regulation on Genetically Engineered Microorganisms
+                </h3>
+                <p>C programming (Research based)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5 section-title">Contact Me</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <form class="contact-form">
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <textarea
+                  class="form-control"
+                  rows="5"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center">
+      <div class="container">
+        <p>&copy; 2024 Portfolio. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
+    <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>

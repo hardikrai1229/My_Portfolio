@@ -1,0 +1,258 @@
+:root {
+    --cursor-size: 8px;
+    --cursor-follower-size: 24px;
+}
+
+/* Custom Cursor */
+.cursor {
+    width: var(--cursor-size);
+    height: var(--cursor-size);
+    background: var(--bs-primary);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.cursor-follower {
+    width: var(--cursor-follower-size);
+    height: var(--cursor-follower-size);
+    background: rgba(var(--bs-primary-rgb), 0.3);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+}
+
+/* Navigation */
+.navbar {
+    backdrop-filter: blur(10px);
+    background-color: rgba(var(--bs-dark-rgb), 0.8);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* Reduced darkness */
+    z-index: 1;
+}
+
+/* Ensure content is above the overlay */
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+/* Make sure the text is visible */
+.reveal-text {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Profile image shadow and hover effect */
+.profile-img {
+    box-shadow: 0 0 30px rgba(var(--bs-primary-rgb), 0.3);
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+/* Skills Section */
+.skill-card {
+    padding: 2rem;
+    text-align: center;
+    border-radius: 1rem;
+    background: var(--bs-dark);
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+}
+
+.skill-card i {
+    font-size: 3rem;
+    color: var(--bs-primary);
+    margin-bottom: 1rem;
+}
+
+/* Project Cards */
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    /* Flexible width */
+    max-width: 400px;
+    /* Adjust card size */
+    height: 350px;
+    /* Increased height for full descriptions */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* Ensure images scale properly */
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures image fills the space */
+    transition: transform 0.3s ease;
+}
+
+/* Project info (text overlay) */
+.project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.85);
+    /* Dark background */
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+    text-align: center;
+    color: white;
+    min-height: 100px;
+    /* Ensures enough space for text */
+    max-height: 50%;
+    /* Allows larger text area */
+    overflow: hidden;
+}
+
+/* Adjust text inside the cards */
+.project-info h3 {
+    font-size: 1.2rem;
+    /* Adjust heading size */
+    margin-bottom: 0.5rem;
+}
+
+.project-info p {
+    font-size: 1rem;
+    /* Keep paragraph text readable */
+    margin-bottom: 0;
+    white-space: normal;
+    /* Allow full text wrapping */
+    overflow: visible;
+}
+
+/* Hover effects */
+.project-card:hover img {
+    transform: scale(1.2);
+    /* Reduce scale to avoid extreme zoom */
+}
+
+.project-card:hover .project-info {
+    transform: translateY(0);
+    /* Slide text up */
+    max-height: 100%;
+    /* Expand to show full text */
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .project-card {
+        max-width: 350px;
+        height: 320px;
+    }
+
+    .project-info h3 {
+        font-size: 1rem;
+        /* Smaller title on mobile */
+    }
+
+    .project-info p {
+        font-size: 0.9rem;
+        /* Smaller description */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card {
+        max-width: 100%;
+        /* Make it full width on small screens */
+        height: 300px;
+    }
+
+    .project-info h3 {
+        font-size: 0.9rem;
+    }
+
+    .project-info p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Contact Form */
+.contact-form {
+    padding: 2rem;
+    background: var(--bs-dark);
+    border-radius: 1rem;
+}
+
+.form-control {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+    background: rgba(var(--bs-light-rgb), 0.1);
+    color: var(--bs-light);
+}
+
+/* Animations */
+.reveal-text {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: var(--bs-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .profile-img {
+        margin-top: 2rem;
+    }
+}
